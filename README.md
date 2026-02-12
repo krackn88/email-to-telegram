@@ -30,7 +30,7 @@ Forward Gmail to Telegram: get important links (e.g. Claude sign-in magic links)
 ## Telegram
 
 1. Create a bot: message [@BotFather](https://t.me/BotFather), send `/newbot`, copy the **token**.
-2. Get the recipient's **chat_id**: they send any message (e.g. "hi") to your bot. Then open:
+2. Get the recipient's **chat_id**: they must **message the bot first** (e.g. send "hi" or tap **Start**) — Telegram does not allow bots to message a user until that user has opened a chat with the bot. Then open:
    ```text
    https://api.telegram.org/bot<PASTE_TOKEN_HERE>/getUpdates
    ```
@@ -49,7 +49,7 @@ Forward Gmail to Telegram: get important links (e.g. Claude sign-in magic links)
    ```bash
    python main.py bot
    ```
-   Keep this running (e.g. on your machine or VPS). The recipient opens the bot in Telegram — the **menu button** shows "Get Claude sign-in link" (or they send `/link`). The bot fetches today's Claude login email from your Gmail and sends the magic link. No interval; it only runs when they ask.
+   Keep this running (e.g. on your machine or VPS). The recipient must have **messaged the bot at least once** (e.g. "hi" or **Start**) before the bot can reply; then they open the bot — the **menu button** shows "Get Claude sign-in link" (or they send `/link`). The bot fetches today's Claude login email from your Gmail and sends the magic link. No interval; it only runs when they ask.
 
 4. **Optional — push once:** `python main.py forward` (finds today's unread Claude login email and sends the link once).
 
