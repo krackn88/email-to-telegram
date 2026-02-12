@@ -1,0 +1,12 @@
+.env
+.venv
+venv
+__pycache__
+*.pyc
+state.json
+token.json
+credentials.json
+client_secret*.json
+dist/
+build/
+*.spec
