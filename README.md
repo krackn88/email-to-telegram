@@ -16,6 +16,20 @@ Forward Gmail to Telegram: get important links (e.g. Claude sign-in magic links)
    - Application type: **Desktop app**  
    - Download the JSON and save it as **`credentials.json`** in this folder  
 
+   **Detailed: Creating Google OAuth credentials**  
+   - Open [Google Cloud Console](https://console.cloud.google.com/) and sign in.  
+   - **Create or select a project:** top bar → select project or "New project" (e.g. "email-to-telegram").  
+   - **OAuth consent screen (required first time):** Left menu → **APIs & Services** → **OAuth consent screen**.  
+     - User type: **External** → Create.  
+     - App name (e.g. "Email to Telegram"), User support email, Developer contact email → Save and Continue.  
+     - Scopes → Save and Continue (or add `https://mail.google.com/` if you add scopes).  
+     - Test users → **Add users** → add the Gmail address you will use (e.g. your@gmail.com) → Save and Continue.  
+   - **Create OAuth client ID:** Left menu → **APIs & Services** → **Credentials** → **Create credentials** → **OAuth client ID**.  
+     - Application type: **Desktop app**.  
+     - Name (e.g. "Email to Telegram desktop").  
+     - Create → download the JSON.  
+   - Rename the downloaded file to **`credentials.json`** and put it in this project folder (same folder as `main.py`).
+
 2. **Sign in once**  
    ```bash
    pip install -r requirements.txt
